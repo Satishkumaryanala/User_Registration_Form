@@ -1,0 +1,22 @@
+#landing
+{
+    background: rgb(182, 203, 203) no-repeat center scroll;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+}
+
+#wrap
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#size
+{
+    width: 1200px;
+}

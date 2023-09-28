@@ -1,0 +1,38 @@
+{% extends 'dummy.html' %}
+{% load static %}
+
+
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+
+
+{% block body_block %}
+
+<div id="landing" style="background-image: url('{% static "images/landing2.jpg" %}')">
+    <div id="wrap">
+        {% if UN %}
+            <h1>Welcome to hame page Mr/Ms {{UN}}</h1>
+        {% else %}
+            <h1>Welcome to hame page</h1>
+        {% endif %}
+
+            <div id="size">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis amet, est ex distinctio sapiente quam quaerat alias! Odio aut 
+                    nobis officiis omnis asperiores ipsum ipsa vero vel! Officia tenetur mollitia, repudiandae iste nemo asperiores et quod dignissimos 
+                    doloremque soluta voluptas nam ut qui voluptatum debitis ducimus beatae nihil eos quaerat eius eveniet unde sequi possimus 
+                    voluptates. Amet, recusandae inventore. Delectus iste ullam illo minus magnam, nemo corrupti! Dolores laboriosam tempore commodi 
+                    repudiandae architecto quod aliquam et magnam! Officiis veritatis nihil tempora in explicabo, quaerat eius porro corporis 
+                    voluptatum illum repudiandae laudantium perspiciatis aperiam nemo quo possimus magnam natus ad eum quisquam cupiditate. Totam 
+                    laborum voluptas, quo adipisci eos quam deleniti ratione amet dolore commodi odio rem exercitationem odit doloribus. Quas iusto 
+                    sed dolorum nam facere quam dicta corporis asperiores deserunt obcaecati voluptas itaque nulla impedit a hic beatae consequuntur 
+                    non, soluta dolore vero excepturi? Fugiat nam minus eligendi amet corporis illo culpa in adipisci porro quas excepturi perspiciatis 
+                    animi omnis magni tempora, enim facilis natus sint. Quisquam tenetur perspiciatis placeat, sapiente cumque dicta maxime!
+                </p>
+            </div>
+    </div>
+         
+</div>
+
+{% endblock %}
