@@ -1,11 +1,20 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 
+from django.http import HttpResponse,HttpResponseRedirect
+from django.urls import reverse
+from django.contrib.auth import authenticate,login,logout
 
+from django.contrib.auth.decorators import login_required
 from app.forms import *
 
 # Create your views here.
-
+def Home(request):
+    if request.session.get('username'):
+        UN = request.session.get('username')
+        d={'UN':UN}
+        return render(request,'Home.html',d)
+    return render(request,'Home.html')
 
 def Register(request):
     UFO = UserForm()
@@ -31,6 +40,23 @@ def Register(request):
         return HttpResponse('valid error')
     return render(request,'Register.html',d)
 
+def User_login(request):
+    if request.method=='POST':
+        username = request.POST['un']
+        password = request.POST['pw']
+        AUO = authenticate(username=username,password=password)
+        if AUO and AUO.is_active:
+            login(request,AUO)
+            request.session['username']=username
+            return HttpResponseRedirect(reverse('Home'))
+        else:
+            return HttpResponse('NOT DONE')
 
+    return render(request,'User_login.html')
+
+@login_required
+def User_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('Home'))
 
     
