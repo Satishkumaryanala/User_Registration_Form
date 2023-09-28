@@ -1,0 +1,26 @@
+{% extends 'dummy.html' %}
+
+
+{% block title %}
+    <title>Register form</title>
+{% endblock %}
+
+{% block body_block %}
+
+    <center>
+        <h1> User Details</h1>
+        
+
+        <h2>Username of user is <i>{{UO.username}}</i></h2>
+
+        <h2>Email of user is <i>{{UO.email}}</i></h2>
+
+        <h2>Address of user is <i>{{PO.address}}</i></h2>
+
+        <h2>Profile pic of user path is<i>{{PO.profile_pic.url}}</i></h2>
+
+        <img src="{{PO.profile_pic.url}}" alt="img not found">
+    
+    </center>
+    
+{% endblock %}
